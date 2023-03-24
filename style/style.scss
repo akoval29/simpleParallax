@@ -1,62 +1,54 @@
 @import url("normalize.css");
 @import url("fonts.googleapis.com/css2?family=Delicious+Handrawn&family=Roboto&display=swap");
 
-body {
-  .parallax__container {
-    height: 700vh;
-    max-width: 1920px;
-  }
-  .parallax__text {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 90px;
-    font-family: 'Delicious Handrawn', cursive;
-    height: 100vh;
-    text-transform: uppercase;
-    z-index: 10;
-    letter-spacing: 10px;
-  }
-
-  .parallax__item {
+.parallax {
+  &__item {
+    max-width: 100%;
+    min-height: 100vh;
     background-attachment: fixed;
     background-repeat: no-repeat;
     background-position: center center;
     background-size: cover;
-  }
-  .parallax__content {
-    background-image: url(https://img.freepik.com/free-photo/3d-render-of-a-tree-landscape-against-a-night-sky_1048-5698.jpg?w=1800&t=st=1679583262~exp=1679583862~hmac=27edca9cbfdb968de11a2e3d402287f19bda9d652fd85a95bf21031dd451f08a);
-    &::after, 
-    &::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      z-index: 20;
-      background-size: 100% 100px;
-      height: 60px;
+    &--winter {
+      background-image: url(https://img.freepik.com/premium-photo/winter-trees-in-mountains-covered-with-fresh-snow_571754-2788.jpg?w=1800);
     }
-    &::after {
-      background: linear-gradient(to bottom, rgb(2, 63, 107), rgba(0,0,0,0));
+    &--spring {
+      background-image: url(https://img.freepik.com/free-photo/soft-focus-of-summer-cosmos-flowers-field-with-blue-sky-background_640221-42.jpg?w=1380&t=st=1679583101~exp=1679583701~hmac=057777aa218851bd4efbd9c74dd2f0f5a5a6412e35a490969be518f183351dd6);
     }
-    &::before {
-      background: linear-gradient(to top, rgb(2, 63, 107), rgba(0,0,0,0));
-      transform: translate(0px, -100%);
+    &--summer {
+      background-image: url(https://img.freepik.com/free-photo/tropical-beach_74190-188.jpg?w=1380&t=st=1679582914~exp=1679583514~hmac=7f46e15f376cae7c72d3b3f8ecda4e6d10baecc36c465dcb5dec89b50ef2b485);
+    }
+    &--autumn {
+      background-image: url(https://img.freepik.com/free-photo/autumn-scenery_1204-341.jpg?w=1380&t=st=1679582953~exp=1679583553~hmac=bb617e8735f50fa87912803b5c2bb919c7e403abbf94982448db7c85ef1cebc4);
+    }
+    &--darkSky {
+      background-image: url(https://img.freepik.com/free-photo/3d-render-of-a-tree-landscape-against-a-night-sky_1048-5698.jpg?w=1800&t=st=1679583262~exp=1679583862~hmac=27edca9cbfdb968de11a2e3d402287f19bda9d652fd85a95bf21031dd451f08a);
+      &::after, 
+      &::before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-size: 100% 100px;
+        height: 60px;
+      }
+      &::after {
+        background: linear-gradient(to bottom, rgb(2, 63, 107), rgba(0,0,0,0));
+      }
+      &::before {
+        background: linear-gradient(to top, rgb(2, 63, 107), rgba(0,0,0,0));
+        transform: translate(0px, -100%);
+      }
+    }
+    &--text {
+      display: flex;
+      min-height: 100vh;
+      justify-content: center;
+      align-items: center;
+      font-size: 90px;
+      font-family: 'Delicious Handrawn', cursive;
+      text-transform: uppercase;
+      letter-spacing: 10px;
     }
   }
-
-  .parallax__winter {
-    background-image: url(https://img.freepik.com/premium-photo/winter-trees-in-mountains-covered-with-fresh-snow_571754-2788.jpg?w=1800);
-  }
-  .parallax__spring {
-    background-image: url(https://img.freepik.com/free-photo/soft-focus-of-summer-cosmos-flowers-field-with-blue-sky-background_640221-42.jpg?w=1380&t=st=1679583101~exp=1679583701~hmac=057777aa218851bd4efbd9c74dd2f0f5a5a6412e35a490969be518f183351dd6);
-  }
-  .parallax__summer {
-    background-image: url(https://img.freepik.com/free-photo/tropical-beach_74190-188.jpg?w=1380&t=st=1679582914~exp=1679583514~hmac=7f46e15f376cae7c72d3b3f8ecda4e6d10baecc36c465dcb5dec89b50ef2b485);
-  }
-  .parallax__autumn {
-    background-image: url(https://img.freepik.com/free-photo/autumn-scenery_1204-341.jpg?w=1380&t=st=1679582953~exp=1679583553~hmac=bb617e8735f50fa87912803b5c2bb919c7e403abbf94982448db7c85ef1cebc4);
-  }
-}
-
-
+} 
